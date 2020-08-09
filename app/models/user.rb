@@ -1,14 +1,17 @@
 class User < ApplicationRecord
       validates :FirstName,presence: true,
-           length:{minimum: 3, maximum: 10 },
-           uniqueness:{case_sensetive:false}
+           length:{minimum: 3, maximum: 10 }
 
       validates :LastName,presence: true,
-           length:{minimum: 3, maximum: 10 },
-           uniqueness:{case_sensetive:false}
+           length:{minimum: 3, maximum: 10 }
+
 
       validates :email,presence: true,
-          length:{maximum: 100 },
-          uniqueness:{case_sensetive:false}
+         format: { with: /^(.+)@(.+)$/, message: "Email invalid"  },
+           uniqueness: { case_sensitive: false },
+           length: {maximum: 254 }
 
+      validates :gender,presence: true
+
+      validates :birthDate,presence:true
 end
