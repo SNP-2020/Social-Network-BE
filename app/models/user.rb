@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
 
       validates :email,presence: true,
-         format: { with: /^(.+)@(.+)$/, message: "Email invalid"  },
+         format: { with: /\A(.+)@(.+)\z/i, message: "Email invalid"  },
            uniqueness: { case_sensitive: false },
            length: {maximum: 254 }
 

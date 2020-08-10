@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :address
       t.string :profilePic
       t.date :birthDate,null:false
-      t.integer :phoneNumber
+      t.string :phoneNumber
       t.timestamps
     end
   end
