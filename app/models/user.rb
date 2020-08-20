@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+      has_secure_password
+
       validates :FirstName,presence: true,
            length:{minimum: 3, maximum: 10 }
 
