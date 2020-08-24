@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_004022) do
     t.string "about"
     t.string "address"
     t.date "birthDate", null: false
-    t.integer "phoneNumber"
+    t.string "phoneNumber"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "profilePic"
