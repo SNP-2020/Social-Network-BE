@@ -8,7 +8,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :gender, null:false
       t.string :about
       t.string :address
-      t.string :profilePic
       t.date :birthDate,null:false
       t.string :phoneNumber
       t.timestamps
