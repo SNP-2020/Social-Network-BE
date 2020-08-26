@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_08_18_004022) do
+
+
+  create_table "posts", force: :cascade do |t|
+    t.string "postText", null: false
+    t.string "imageURL"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
 
   create_table "users", force: :cascade do |t|
     t.string "FirstName", null: false
