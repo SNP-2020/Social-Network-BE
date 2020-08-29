@@ -11,12 +11,20 @@ skip_before_action:verify_authenticity_token
       birthDate:params[:birthDate],
       gender:params[:gender]
     )
-      if user.save
-        render json:user
-      else
-        render status: :unauthorized
-      end
+    if user.save
+      render json:user
+    else
+      render status: :unauthorized
+    end
+  end
 
+  def show
+    begin
+      user = User.find(params[:id])
+      render json: user
+    rescue ActiveRecord::RecordNotFound
+      render json: {:error => "not-found"}.to_json, :status => 404
+    end
+  end
 
- end
 end
