@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 #reading user input
 skip_before_action:verify_authenticity_token
+before_action :authorize_request, except: :create
 
   def create
     user =User.new(
