@@ -16,7 +16,11 @@ skip_before_action:verify_authenticity_token
       else
         render status: :unauthorized
       end
-
-
  end
+
+ def search
+   user=User.where("FirstName LIKE ? ","%#{params[:FirstName]}%")
+    render json:user
+ end
+
 end
