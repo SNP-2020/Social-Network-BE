@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   match '/users'=>"users#create",via: :options
   resources :users
   post "login",to: "authentication#login"
+  get "search",to: "users#search"
 end
