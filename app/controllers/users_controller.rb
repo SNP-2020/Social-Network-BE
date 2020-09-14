@@ -28,4 +28,9 @@ before_action :authorize_request, except: :create
     end
   end
 
+  def search
+     user=User.where("FirstName LIKE ? ","%#{[:FirstName]}%")
+     render json:user
+  end
+  
 end
